@@ -1,0 +1,58 @@
+body {
+  background: steelblue;
+}
+
+.boton {
+  display: block;
+  width: 200px;
+  margin: 40px auto;
+  padding: 1em 0;
+  border: 1px solid white;
+  color: #04202c;
+  text-align: center;
+  background: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: border 0.3s, background 0.3s;
+}
+
+.boton:focus {
+  outline: none;
+}
+
+.boton span {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.boton:after {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  color: white;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+}
+
+.boton:hover {
+  border: 1px solid #04202c;
+  background: #04202c;
+}
+
+.boton:hover:after {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 30%, 0);
+          transform: translate3d(0, 30%, 0);
+}
+
+.boton:hover span {
+  opacity: 0;
+}
